@@ -6,7 +6,7 @@ ENV DOCKER_VERSION=18.09.8 \
     PATH=${PATH}:/usr/local/go/bin
 
 # Install Docker and Docker Compose
-RUN apt-get update -y && apt-get install -y curl build-essential iptables python3-pip && \
+RUN apt-get update -y && apt-get install -y curl build-essential iptables python3-pip iproute2 && \
     curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar zx && \
     mv /docker/* /bin/ && \
     chmod +x /bin/docker* && \
